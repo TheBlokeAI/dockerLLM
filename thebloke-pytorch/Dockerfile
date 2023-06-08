@@ -17,6 +17,10 @@ RUN apt-get update -y && \
 RUN git config --global credential.helper store &&
     git lfs install
 
+# Install Oh My Zsh https://github.com/ohmyzsh/ohmyzsh
+RUN sh -c "ZSH=/root/ohmyzsh $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Add config files with useful defaults and user-friendly features for users SSHing in
 COPY ../conf-files/bashrc /root/.bashrc
 COPY ../conf-files/vimrc /root/.vimrc
 COPY ../conf-files/zshrc /root/.zshrc
