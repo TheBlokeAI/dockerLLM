@@ -8,15 +8,14 @@ FROM thebloke/cuda$CUDA_VERSION-ubuntu$UBUNTU_VERSION-pytorch:latest as base
 WORKDIR /root
 
 # Install text-generation-webui, including all extensions
+# Also includes exllama
 RUN git clone https://github.com/oobabooga/text-generation-webui && \
     cd text-generation-webui && \
+    pip3 install -r requirements.txt && \
+    bash -c 'for req in extensions/*/requirements.txt ; do pip3 install -r "$req" ; done' && \
     mkdir -p repositories && \
     cd repositories && \
-    git clone https://github.com/turboderp/exllama && \
-    pip3 install -r requirements.txt && \
-    bash -c 'for req in extensions/*/requirements.txt ; do pip3 install -r "$req" ; done'
-
-RUN pip3 install flask
+    git clone https://github.com/turboderp/exllama
 
 # Install AutoGPTQ, overwriting the version automatically installed by text-generation-webui
 ARG AUTOGPTQ="0.2.2"
