@@ -15,7 +15,8 @@ RUN git clone https://github.com/oobabooga/text-generation-webui && \
     bash -c 'for req in extensions/*/requirements.txt ; do pip3 install -r "$req" ; done' && \
     mkdir -p repositories && \
     cd repositories && \
-    git clone https://github.com/turboderp/exllama
+    git clone https://github.com/turboderp/exllama && \
+    pip3 install -r exllama/requirements.txt
 
 # Install AutoGPTQ, overwriting the version automatically installed by text-generation-webui
 ARG AUTOGPTQ="0.2.2"
