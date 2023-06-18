@@ -5,7 +5,7 @@ ARG UBUNTU_VERSION="22.04"
 # Base image
 FROM thebloke/cuda$CUDA_VERSION-ubuntu$UBUNTU_VERSION-textgen:latest as base
 
-ARG APTPKGS="zsh wget tmux tldr nvtop vim neovim curl rsync net-tools less iputils-ping 7zip zip"
+ARG APTPKGS="zsh wget tmux tldr nvtop vim neovim curl rsync net-tools less iputils-ping 7zip zip unzip"
 
 # Install useful command line utility software
 RUN apt-get update -y && \
