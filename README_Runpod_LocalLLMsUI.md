@@ -89,7 +89,7 @@ Once the download is finished, you can access the UI and:
 
 ## Template environment variables: automatic model download and UI parameters
 
-This template supports two environment variables:
+This template supports two environment variables which you can specify via **Template Overrides**.
 
 * `MODEL`
   * Pass in the ID of a Hugging Face repo, or an `https://` link to a single GGML model file
