@@ -147,7 +147,7 @@ tail -100f /workspace/text-generation-webui.log
 
 I have over 250 repos at HuggingFace, see them here: https://huggingface.co/TheBloke
 
-## More info on this template
+## About this template
 
 This template uses Docker `thebloke/cuda11.8.0-ubuntu22.04-oneclick:latest`
 
