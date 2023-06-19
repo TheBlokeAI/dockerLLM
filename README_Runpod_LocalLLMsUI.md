@@ -41,7 +41,7 @@ This template supports volumes mounted under `/workspace`.
 
 On boot, text-generation-webui will be moved to `/workspace/text-generation-webui`.  Therefore all downloaded models, and any saved settings/characters/etc, will be persisted on your volume, including Network Volumes.
 
-With default settings, it will create a 100GB volume on /workspace.  This storage is persistent after shutting down and then restarting the pod.  But its contents will be lost if you delete the pod.  Runpod support Network Volumes in some datacentres.  If you create a Network Volume and use it with this template, your models will be stored on the Network Volume and will be persistent permanently, including working between different kinds of pods (within that same datacentre).
+With default settings, it will create a 100GB volume on `/workspace`.  This storage is persistent after shutting down and then restarting the pod.  But its contents will be lost if you delete the pod.  Runpod support Network Volumes in some datacentres.  If you create a Network Volume and use it with this template, your models will be stored on the Network Volume and will be persistent permanently, including working between different kinds of pods (within that same datacentre).
 
 ## How to access the UI
 
@@ -68,24 +68,27 @@ To download a model via SSH:
 
 ```
 cd /workspace/text-generation-webui/models
-wget https://<path to GGML model>
+wget https://huggingface.co/<repo>/resolve/main/<filename>
 ```
 
-For example:
+For example, to download `vicuna-13b-v1.3.ggmlv3.q4_K_M.bin` from `TheBloke/vicuna-13b-v1.3-GGML`:
 ```
 wget https://huggingface.co/TheBloke/vicuna-13b-v1.3-GGML/resolve/main/vicuna-13b-v1.3.ggmlv3.q4_K_M.bin
 ```
 
 Once the download is finished, you can access the UI and:
-* Click the **Models** tab
-* Untick **Autoload the model**
-* Click the **Refresh* icon next to **Model** in the top left
-* Choose the GGML file you just downloaded
-* In the **Loader** dropdown, choose **llama.cpp**
-* For full GPU acceleration, set **Threads** to **1** and **n-gpu-layers** to 100
+* Click the **Models** tab;
+* Untick **Autoload the model**;
+* Click the **Refresh* icon next to **Model** in the top left;
+* Choose the GGML file you just downloaded;
+* In the **Loader** dropdown, choose **llama.cpp**;
+* For full GPU acceleration, set **Threads** to **1** and **n-gpu-layers** to 100;
   * Note that whether you can do full acceleration will depend on the GPU you've chosen, the size of the model, and the quantisation size.  If using one of my models, refer to the README for the list of quant sizes and pay attention to the "Max RAM" column.  For full acceleration, pick a quant size which has "Max RAM" 2-3GB lower than the total VRAM of your GPU.
-* If you can't do full GPU acceleration, set **Threads** to 8 to start with and **n-gpu-layers** to as many layers as the GPU has VRAM for.
-  * You can experiment with higher **Threads** value, which depending on the system in question may result in slightly higher performance.
+  * If you can't do full GPU acceleration, set **Threads** to 8 to start with and **n-gpu-layers** to as many layers as the GPU has VRAM for.
+    * You can experiment with higher **Threads** value, which depending on the system in question may result in slightly higher performance.
+* Click **Save settings** and then **Reload**
+* The model will now load.
+* Once it says it's loaded, click the **Text generation tab** and enter a prompt!
 
 ## Template environment variables: automatic model download and UI parameters
 
