@@ -1,6 +1,16 @@
-![.](https://i.imgur.com/EBdldam.jpg)
-
-[Chat & support on Discord](https://discord.gg/Jq4vkcDakD)   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    [Want to contribute? TheBloke's Patreon page](https://www.patreon.com/TheBlokeAI)
+<!-- header start -->
+<div style="width: 100%;">
+    <img src="https://i.imgur.com/EBdldam.jpg" alt="TheBlokeAI" style="width: 100%; min-width: 400px; display: block; margin: auto;">
+</div>
+<div style="display: flex; justify-content: space-between; width: 100%;">
+    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <p><a href="https://discord.gg/Jq4vkcDakD">Chat & support: my new Discord server</a></p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+        <p><a href="https://www.patreon.com/TheBlokeAI">Want to contribute? TheBloke's Patreon page</a></p>
+    </div>
+</div>
+<!-- header end -->
 
 ## TheBloke's Local LLMs: One-Click UI
 
