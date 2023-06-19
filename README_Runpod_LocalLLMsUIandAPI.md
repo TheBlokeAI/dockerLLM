@@ -12,7 +12,7 @@
 </div>
 <!-- header end -->
 
-## TheBloke's Local LLMs: One-Click UI
+## TheBloke's Local LLMs: One-Click UI & API
 
 ### Update: 19th June 2023
 * Major update to the template
