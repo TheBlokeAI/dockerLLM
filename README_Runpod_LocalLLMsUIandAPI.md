@@ -47,6 +47,29 @@ With default settings, it will create a 100GB volume on /workspace.  This storag
 
 Once the pod is started, click **Connect** and then **HTTP [Port 7860]**.
 
+## How to access the API
+
+### HTTP API - non-streaming
+The HTTP API on port 5000 can be accessed directly from the **Connect** tab:
+
+Right-click on **HTTP [Port 5000]** and choose to "Copy Link Address" (or similar wording).  
+
+This will copy your HTTP API URL to your clipboard.
+
+### WebSockets API - streaming
+
+A TCP port will be opened on the public IP of the pod. 
+
+You can see the public IP and the external port under:
+* **My Pods** -> **Connect** -> **TCP port forwarding** 
+* The connect to the **Public IP** on the **External port** that's listed against `Internal: 5005`
+
+![.](https://raw.githubusercontent.com/TheBlokeAI/dockerLLM/main/imgs/RunpodTemplateAPI-TCPPortMapping.png)
+
+Example API scripts:
+* [API example script, using HTTP port 5000](https://github.com/oobabooga/text-generation-webui/blob/main/api-examples/api-example.py)
+* [API example script with streaming, using TCP port 5005 (Web Sockets)](https://github.com/oobabooga/text-generation-webui/blob/main/api-examples/api-example-stream.py)
+
 ## How to download and use a GPTQ model via the text-generation-webui UI
 
 Once you're in the UI:
