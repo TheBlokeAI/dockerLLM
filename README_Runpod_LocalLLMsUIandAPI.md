@@ -41,7 +41,7 @@ This template supports volumes mounted under `/workspace`.
 
 On boot, text-generation-webui will be moved to `/workspace/text-generation-webui`.  Therefore all downloaded models, and any saved settings/characters/etc, will be persisted on your volume, including Network Volumes.
 
-With default settings, it will create a 100GB volume on /workspace.  This storage is persistent after shutting down and then restarting the pod.  But its contents will be lost if you delete the pod.  Runpod support Network Volumes in some datacentres.  If you create a Network Volume and use it with this template, your models will be stored on the Network Volume and will be persistent permanently, including working between different kinds of pods (within that same datacentre).
+With default settings, it will create a 100GB volume on `/workspace`.  This storage is persistent after shutting down and then restarting the pod.  But its contents will be lost if you delete the pod.  Runpod support Network Volumes in some datacentres.  If you create a Network Volume and use it with this template, your models will be stored on the Network Volume and will be persistent permanently, including working between different kinds of pods (within that same datacentre).
 
 ## How to access the UI
 
