@@ -70,7 +70,7 @@ Example API scripts:
 * [API example script, using HTTP port 5000](https://github.com/oobabooga/text-generation-webui/blob/main/api-examples/api-example.py)
 * [API example script with streaming, using TCP port 5005 (Web Sockets)](https://github.com/oobabooga/text-generation-webui/blob/main/api-examples/api-example-stream.py)
 
-## How to download and use a GPTQ model via the text-generation-webui UI
+## How to download and use a GPTQ model, using AutoGPTQ
 
 Once you're in the UI:
 
@@ -81,6 +81,24 @@ Once you're in the UI:
 5. Click the **Refresh** icon next to **Model** in the top left.
 6. In the **Model drop-down**: choose the model you just downloaded, eg `vicuna-13b-v1.3-GPTQ`.
 7. Once it says it's loaded, click the **Text Generation tab** and enter a prompt!
+
+## How to use a model with the ExLlama turbo-charged GPTQ engine
+
+For Llama 4-bit GPTQs, you have the option of using ExLlama instead of AutoGPTQ.
+
+1. Download the model as described above.
+2. On the **Models** tab, change the **Loader** dropdown to **ExLlama**
+3. Click **Reload** to load the model with ExLlama.
+3. For most systems, you're done! You can now run inference as normal, and expect to see better performance.
+4. If you're using a dual-GPU system, you can configure ExLlama to use both GPUs:
+  - In the **gpu-split** text box, enter a comma-separated list of the VRAM to use on each GPU
+  - For example, if using a system with 2 x 24GB GPUs, you could enter `23,23`
+  - **Note**: Multiple GPUs should only be used for loading larger models than can load on one GPU. Multi-GPU inference is not faster than single GPU in cases where one GPU has enough VRAM to load the model.
+5. To optionally save ExLlama as the loader for this model, click **Save Settings**.
+
+If you want to use ExLlama permanently, for all models, you can add the `--loader exllama` parameter to text-generation-webui.
+
+This can be done either by editing `/workspace/run-text-generation-webui.sh`, or by passing the `UI_ARGS` environment variable via Template Overrides. Both methods are described below.
 
 ## How to download and use a GGML model
 
@@ -146,14 +164,14 @@ You can also try change other settings in the `Interface Settings` tab, includin
 
 To have the UI always launch with certain settings, you can SSH in and edit the script `/workspace/run-text-generation-webui.sh`
 
-Add or change any command line arguments you want in that script.
+Add or change any command line arguments you want in that script, then save it. Your settings will persist on the volume between pod restarts, and will persist permanently if a Network Volume is being used.
 
-You can restart the server at any time by running:
+Once you've changed settings you can then restart the server by running:
 ```
 /root/scripts/restart-text-generation-webui.sh
 ```
 
-Alternatively, refer to the Environment Variables section above for details on how to use `UI_ARGS` in a Template Override.
+For an alternative method of specifying parameters, refer to the Environment Variables section above for details on how to use `UI_ARGS` in a Template Override.
 
 ## Server logs
 
