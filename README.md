@@ -19,6 +19,6 @@
 
 ## Runpod: TheBloke's Local LLMs UI & API
 
-[Runpod template](https://runpod.io/gsc?template=f1pf20op0z&ref=eexqfacd)
+[Runpod template link](https://runpod.io/gsc?template=f1pf20op0z&ref=eexqfacd)
 
 [Full documentation is available here](https://github.com/TheBlokeAI/dockerLLM/blob/main/README_Runpod_LocalLLMsUIandAPI.md)
