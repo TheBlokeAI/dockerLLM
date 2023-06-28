@@ -1,5 +1,10 @@
 # TheBloke's Docker templates
 
+### Update: 28th June 2023 - SuperHOT fixed
+* Updated to latest ExLlama code, fixing issue with SuperHOT GPTQs
+* ExLlama now automaticaly updates on boot, like text-generation-webui already did
+  * This should result in the template automatically supporting new ExLlama features in future
+    
 ### Update: 19th June 2023
 * Major update to the template
 * text-generation-webui is now integrated with:
