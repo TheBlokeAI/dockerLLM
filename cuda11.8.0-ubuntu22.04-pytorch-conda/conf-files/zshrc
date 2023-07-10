@@ -113,6 +113,16 @@ export EDITOR=nvim
 alias python=python3
 alias pip=pip3
 
+# If we have a volume, move our .zsh conf files there so they can be edited persistently
+if [[ -d /workspace ]]; then
+  if [[ ! -d /workspace/.zsh ]]; then
+    mv $HOME/.zsh /workspace
+  else
+    rm -rf $HOME/.zsh
+  fi
+  ln -s /workspace/.zsh $HOME/.zsh
+fi
+
 # Include additional ZSH config files
 for zshfile in $HOME/.zsh/*.zsh; do
   source "$zshfile"
@@ -124,4 +134,3 @@ bindkey "^U" kill-region
 export PATH=/usr/local/cuda/bin:"$PATH"
 
 [[ -d /workspace ]] && cd /workspace
-

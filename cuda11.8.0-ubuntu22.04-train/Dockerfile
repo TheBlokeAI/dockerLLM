@@ -18,21 +18,21 @@ RUN git clone https://github.com/lm-sys/FastChat && \
     pip3 install deepspeed
 
 # Install OpenAccess AI Collective's Axoltl
-ENV CONDA=axolotl
-RUN conda create -n "${CONDA}" --clone pytorch
-ENV PATH="${HOME}/miniconda3/envs/${CONDA}/bin:${BASEPATH}"
-RUN git clone https://github.com/OpenAccess-AI-Collective/axolotl && \
-    cd axolotl && \
-    pip3 install -e .
+#ENV CONDA=axolotl
+#RUN conda create -n "${CONDA}" --clone pytorch
+#ENV PATH="${HOME}/miniconda3/envs/${CONDA}/bin:${BASEPATH}"
+#RUN git clone https://github.com/OpenAccess-AI-Collective/axolotl && \
+#    cd axolotl && \
+#    pip3 install -e .
 
 # Install AetherCortex's Llama-X, which is used by WizardLM for example
-ENV CONDA=llamax
-RUN conda create -n "${CONDA}" --clone pytorch
-ENV PATH="${HOME}/miniconda3/envs/${CONDA}/bin:${BASEPATH}"
-RUN git clone https://github.com/AetherCortex/Llama-X && \
-    cd Llama-X && \
-    pip3 install transformers==4.29.2 && \
-    pip3 install -r requirements.txt
+#ENV CONDA=llamax
+#RUN conda create -n "${CONDA}" --clone pytorch
+#ENV PATH="${HOME}/miniconda3/envs/${CONDA}/bin:${BASEPATH}"
+#RUN git clone https://github.com/AetherCortex/Llama-X && \
+#    cd Llama-X && \
+#    pip3 install transformers==4.29.2 && \
+#    pip3 install -r requirements.txt
 
 # Clone the WizardLM codebase
-RUN git clone https://github.com/nlpxucan/WizardLM
+#RUN git clone https://github.com/nlpxucan/WizardLM
