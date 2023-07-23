@@ -1,9 +1,10 @@
 ARG CUDA_VERSION="11.8.0"
 ARG CUDNN_VERSION="8"
 ARG UBUNTU_VERSION="22.04"
+ARG DOCKER_FROM=nvidia/cuda:$CUDA_VERSION-cudnn$CUDNN_VERSION-devel-ubuntu$UBUNTU_VERSION
 
 # Base NVidia CUDA Ubuntu image
-FROM nvidia/cuda:$CUDA_VERSION-cudnn$CUDNN_VERSION-devel-ubuntu$UBUNTU_VERSION AS base
+FROM $DOCKER_FROM AS base
 
 # Install Python plus openssh, which is our minimum set of required packages.
 RUN apt-get update -y && \

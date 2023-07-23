@@ -1,9 +1,10 @@
 ARG CUDA_VERSION="11.8.0"
 ARG CUDNN_VERSION="8"
 ARG UBUNTU_VERSION="22.04"
+ARG DOCKER_FROM=thebloke/cuda$CUDA_VERSION-ubuntu$UBUNTU_VERSION-textgen:latest 
 
 # Base image
-FROM thebloke/cuda$CUDA_VERSION-ubuntu$UBUNTU_VERSION-textgen:latest as base
+FROM $DOCKER_FROM as base
 
 ARG APTPKGS="zsh wget tmux tldr nvtop vim neovim curl rsync net-tools less iputils-ping 7zip zip unzip"
 
