@@ -14,6 +14,13 @@
 
 ## TheBloke's Local LLMs: One-Click UI & API
 
+### Update: 23rd July 2023 - Llama 2 support, including Llama 2 70B in ExLlama
+* Llama 2 models, including Llama 2 70B, are now fully supported
+* Updated to latest text-generation-webui `requirements.txt`
+* Removed the exllama pip package installed by text-generation-webui
+  * Therefore the ExLlama kernel will build automatically on first use
+  * This ensures that ExLlama is always up-to-date with any new ExLlama commits (which are pulled automatically on each boot)
+
 ### Update: 28th June 2023 - SuperHOT fixed
 * Updated to latest ExLlama code, fixing issue with SuperHOT GPTQs
 * ExLlama now automaticaly updates on boot, like text-generation-webui already did
