@@ -6,6 +6,7 @@
 * Removed the exllama pip package installed by text-generation-webui
   * Therefore the ExLlama kernel will build automatically on first use
   * This ensures that ExLlama is always up-to-date with any new ExLlama commits (which are pulled automatically on each boot)
+* Added simple build script for building the Docker containers
 
 ### Update: 28th June 2023 - SuperHOT fixed
 * Updated to latest ExLlama code, fixing issue with SuperHOT GPTQs
