@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "TheBloke's Local LLMs: Pod started"
+echo "Starting: Ooobabooga's text-generation-webui. Container provided by TheBloke."
 
 SCRIPTDIR=/root/scripts
 VOLUME=/workspace
