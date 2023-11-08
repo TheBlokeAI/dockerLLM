@@ -14,6 +14,12 @@
 
 ## TheBloke's Local LLMs: One-Click UI
 
+### Update: 8th October 2023 - CUDA 12.1.1, fixed ExLlamav2 issues
+* The instances now use CUDA 12.1.1, which fixes issues with EXL2
+* Note that for now the main container is still called cuda11.8.0-ubuntu22.04-oneclick
+* This is because I need to get in touch with Runpod to update the name of the container used in their instances
+* This is just a naming issue; the container does now use CUDA 12.1.1 and EXL2 is confirmed to work again.
+
 ### Update: 23rd July 2023 - Llama 2 support, including Llama 2 70B in ExLlama
 * Llama 2 models, including Llama 2 70B, are now fully supported
 * Updated to latest text-generation-webui `requirements.txt`

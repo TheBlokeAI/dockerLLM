@@ -17,7 +17,7 @@ RUN apt-get update -y && \
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
 # Install pytorch
-ARG PYTORCH="2.0.1"
+ARG PYTORCH="2.1.0"
 ARG CUDA="118"
 RUN pip3 install --no-cache-dir -U torch==$PYTORCH torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu$CUDA
 
