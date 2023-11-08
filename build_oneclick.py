@@ -20,7 +20,7 @@ def build(docker_repo, tag, from_docker=None):
     if from_docker is not None:
         docker_build_arg += f" --build-arg DOCKER_FROM={from_docker}"
 
-    build_command = f"docker build {docker_build_arg} {dockerLLM_dir}/{docker_repo}"
+    build_command = f"docker build --no-cache {docker_build_arg} {dockerLLM_dir}/{docker_repo}"
     push_command = f"docker push {docker_container}"
     
     try:
@@ -40,8 +40,8 @@ def build(docker_repo, tag, from_docker=None):
 today_tag = datetime.datetime.now().strftime("%d%m%Y")
 
 try:
-    pytorch_container = build("cuda11.8.0-ubuntu22.04-pytorch", "1")
-    textgen_container = build("cuda11.8.0-ubuntu22.04-textgen", today_tag, pytorch_container)
+    pytorch_container = build("cuda12.1.1-ubuntu22.04-pytorch", "1")
+    textgen_container = build("cuda12.1.1-ubuntu22.04-textgen", today_tag, pytorch_container)
     oneclick_container = build("cuda11.8.0-ubuntu22.04-oneclick", today_tag, textgen_container)
 
     logger.info(f"Successfully built and pushed {oneclick_container}")
