@@ -14,6 +14,9 @@
 
 ## TheBloke's Local LLMs: One-Click UI
 
+### Update: 11 October 2023 - Update API command line option
+* Container will now launch text-generation-webui with arg `--extensions openai`
+
 ### Update: 8th October 2023 - CUDA 12.1.1, fixed ExLlamav2 issues
 * The instances now use CUDA 12.1.1, which fixes issues with EXL2
 * Note that for now the main container is still called cuda11.8.0-ubuntu22.04-oneclick
@@ -50,8 +53,9 @@ It can load quantised GPTQ models (3-bit, 4-bit and 8-bit), quantised GGML model
 It provides:
 * [text-generation-webui](https://github.com/oobabooga/text-generation-webui) with all extensions.
 * GPTQ support via [AutoGPTQ](https://github.com/PanQiWei/AutoGPTQ) - 2, 3, 4 and 8-bit, all model types.
-* GPTQ support via [ExLlama](https://github.com/turboderp/exllama) - 4-bit Llama models only.
-* GGML with GPU acceleration via [llama-cpp-python](https://github.com/abetlen/llama-cpp-python).
+* GPTQ support via [ExLlama](https://github.com/turboderp/exllama) and ExLlamav2 - 4-bit Llama models only.
+* GGUF with GPU acceleration via [llama-cpp-python](https://github.com/abetlen/llama-cpp-python).
+* AWQ support via AutoAWQ.
 
 ## Volume support
 
