@@ -1,5 +1,8 @@
 # TheBloke's Docker templates
 
+### Update: 11 October 2023 - Update API command line option
+* Container will now launch text-generation-webui with arg `--extensions openai`
+
 ### Update: 8th October 2023 - CUDA 12.1.1, fixed ExLlamav2 issues
 * The instances now use CUDA 12.1.1, which fixes issues with EXL2
 * Note that for now the main container is still called cuda11.8.0-ubuntu22.04-oneclick
