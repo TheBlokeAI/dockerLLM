@@ -60,7 +60,9 @@ while true; do
 			ARGS=("${ARGS[@]}" ${UI_ARGS})
 		fi
 
-		($VOLUME/run-text-generation-webui.sh "${ARGS[@]}" 2>&1) >>$VOLUME/logs/text-generation-webui.log
+		# Run text-generation-webui and log it.
+		# tee is used for logs so they also display on 'screen', ie will show in the Runpod log viewer
+		($VOLUME/run-text-generation-webui.sh "${ARGS[@]}" 2>&1) | tee -a $VOLUME/logs/text-generation-webui.log
 
 	fi
 	sleep 2

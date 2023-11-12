@@ -37,4 +37,4 @@ COPY --chmod=755 start-with-ui.sh /start.sh
 
 WORKDIR /workspace
 
-CMD [ "/start.sh" ]
+ENTRYPOINT [ "/start.sh" ]

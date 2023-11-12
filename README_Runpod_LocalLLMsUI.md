@@ -16,6 +16,7 @@
 
 ### Update: 11 October 2023 - Update API command line option
 * Container will now launch text-generation-webui with arg `--extensions openai`
+* Logs from text-generation-webui will now appear in the Runpod log viewer, as well as `/workspace/logs/text-generation-webui.log`
 
 ### Update: 8th October 2023 - CUDA 12.1.1, fixed ExLlamav2 issues
 * The instances now use CUDA 12.1.1, which fixes issues with EXL2
