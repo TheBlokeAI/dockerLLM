@@ -1,5 +1,8 @@
 # TheBloke's Docker templates
 
+### Update: 16 December 2023 - Rebuild to add Mixtral support
+* Should now support Mixtral, with updated AutoGPTQ 0.6 and llama-cpp-python 0.2.23
+
 ### Update: 11 October 2023 - Update API command line option
 * Container will now launch text-generation-webui with arg `--extensions openai`
 * Logs from text-generation-webui will now appear in the Runpod log viewer, as well as `/workspace/logs/text-generation-webui.log`
